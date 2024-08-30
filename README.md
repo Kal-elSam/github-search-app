@@ -51,9 +51,38 @@ npm run dev
 - **React Icons**: Biblioteca de iconos para React.
 
 
-## 📂 Estructura del Proyecto
+## 🏗️ Estructura del Proyecto
 
-src/ ├── app/ │ ├── user-search/ │ │ └── page.tsx # Página para buscar usuarios de GitHub │ └── repo-search/ │ └── page.tsx # Página para buscar repositorios de GitHub ├── components/ │ ├── SearchBar.tsx # Componente reutilizable para la barra de búsqueda │ ├── UserResults.tsx # Componente para mostrar resultados de usuarios │ └── RepoResults.tsx # Componente para mostrar resultados de repositorios ├── services/ │ └── githubService.ts # Servicios para interactuar con la API de GitHub ├── styles/ │ └── globals.css # Estilos globales de la aplicación └── pages/ ├── _app.tsx # Configuración global de la aplicación └── index.tsx # Página principal con navegación a las búsquedas
+### 📂 Organización General
+
+1. **Separación de responsabilidades**:  
+   Hemos organizado el proyecto en diferentes carpetas donde cada una maneja una responsabilidad específica. Esto sigue el principio de separación de responsabilidades, asegurando que cada componente o módulo tenga un único propósito claro.
+
+2. **División entre componentes y páginas**:  
+   - La carpeta `components/` contiene componentes reutilizables como `SearchBar.tsx` y `UserResults.tsx`. Estos componentes pueden ser utilizados en múltiples páginas, promoviendo la reutilización del código y la consistencia en la interfaz de usuario.
+   - La carpeta `app/` contiene las páginas que manejan diferentes funcionalidades, como `user-search` y `repo-search`. Esto sigue la convención de Next.js para definir rutas automáticamente, facilitando la navegación en la aplicación.
+
+3. **Servicios para la lógica de negocio**:  
+   - En `services/githubService.ts` se encuentra la lógica de interacción con la API de GitHub. Esta separación permite desacoplar la lógica de negocio de la presentación, haciendo que el código sea más modular y fácil de probar.
+
+4. **Estilos globales y consistentes**:  
+   - Utilizamos una combinación de `NextUI` y `TailwindCSS` para aplicar estilos a los componentes. Esto proporciona flexibilidad en el diseño mientras se mantiene una apariencia coherente en toda la aplicación.
+   - Los estilos globales están centralizados en `styles/globals.css`, garantizando consistencia en la interfaz de usuario.
+
+5. **Uso de TypeScript**:  
+   - Todo el proyecto está escrito en TypeScript, lo que mejora la mantenibilidad y robustez del código. El tipado estático ayuda a prevenir errores comunes y proporciona una mejor autocompletación y documentación durante el desarrollo.
+
+6. **Enfoque Mobile-First**:  
+   - La aplicación ha sido diseñada siguiendo un enfoque "mobile-first", asegurando que sea accesible y fácil de usar en dispositivos móviles antes de adaptarla a pantallas más grandes.
+
+### 📝 Buenas Prácticas Utilizadas
+
+- **Modularidad**: La separación clara entre componentes, servicios y páginas asegura que cada parte del código tenga un propósito específico.
+- **Reutilización de Código**: Componentes reutilizables para evitar la duplicación de código y asegurar una experiencia de usuario consistente.
+- **Separation of Concerns (SoC)**: La lógica de negocio está desacoplada de la presentación para facilitar la escalabilidad y mantenibilidad del proyecto.
+- **Tipado Estático con TypeScript**: Utilizar TypeScript reduce errores y mejora la calidad del código.
+- **Consistencia en los Estilos**: Utilización de NextUI y TailwindCSS para mantener una apariencia coherente y optimizar el rendimiento del desarrollo.
+- **Enfoque Responsive**: Un diseño "mobile-first" garantiza que la aplicación sea accesible y fácil de usar en dispositivos móviles.
 
 ## 📝 Decisiones de Diseño
 
