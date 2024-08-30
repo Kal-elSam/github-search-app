@@ -4,7 +4,7 @@ Esta es una aplicación de búsqueda de usuarios y repositorios de GitHub desarr
 
 ## 🚀 Demo en Vivo
 
-[Enlace a la Aplicación Desplegada](https://your-deployment-url.com)
+[Enlace a la Aplicación Desplegada](https://github-search-app-nu.vercel.app/)
 
 ## 📋 Requisitos
 
@@ -18,7 +18,7 @@ Sigue estos pasos para clonar y ejecutar la aplicación localmente:
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/github-search-app.git
+   git clone https://github.com/Kal-elSam/github-search-app
    cd github-search-app
 
    ```
