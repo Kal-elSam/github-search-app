@@ -1,8 +1,16 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter, Link, Avatar, Divider } from '@nextui-org/react';
-import { FaFolderOpen, FaCode } from 'react-icons/fa';
+import React from "react";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Link,
+  Avatar,
+  Divider,
+} from "@nextui-org/react";
+import { FaFolderOpen, FaCode } from "react-icons/fa";
 
 interface User {
   login: string;
@@ -35,7 +43,9 @@ const UserResults: React.FC<UserResultsProps> = ({ users }) => {
               <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
               <span className="w-3 h-3 bg-green-500 rounded-full"></span>
             </div>
-            <span className="text-xs text-gray-400 font-mono pl-2">{user.login}</span>
+            <span className="text-xs text-gray-400 font-mono pl-2">
+              {user.login}
+            </span>
             <div className="flex-1"></div>
           </div>
 
@@ -46,8 +56,12 @@ const UserResults: React.FC<UserResultsProps> = ({ users }) => {
               className="w-16 h-16 rounded-full border border-gray-600 shadow-sm"
             />
             <div className="ml-4">
-              <h4 className="text-white text-lg font-semibold mb-1">{user.name || user.login}</h4>
-              {user.location && <p className="text-sm text-gray-400">{user.location}</p>}
+              <h4 className="text-white text-lg font-semibold mb-1">
+                {user.name || user.login}
+              </h4>
+              {user.location && (
+                <p className="text-sm text-gray-400">{user.location}</p>
+              )}
             </div>
           </CardHeader>
 
@@ -57,13 +71,17 @@ const UserResults: React.FC<UserResultsProps> = ({ users }) => {
             {user.public_repos !== undefined && (
               <div className="flex items-center space-x-2">
                 <FaFolderOpen className="text-blue-400" />
-                <p className="text-gray-400">Repositorios: {user.public_repos}</p>
+                <p className="text-gray-400">
+                  Repositorios: {user.public_repos}
+                </p>
               </div>
             )}
             {user.topLanguages && user.topLanguages.length > 0 && (
               <div className="flex items-center space-x-2">
                 <FaCode className="text-green-400" />
-                <p className="text-gray-400">Tecnologías: {user.topLanguages.join(', ')}</p>
+                <p className="text-gray-400">
+                  Tecnologías: {user.topLanguages.join(", ")}
+                </p>
               </div>
             )}
           </CardBody>

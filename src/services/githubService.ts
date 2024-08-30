@@ -65,3 +65,4 @@ export const searchRepositories = async (query: string) => {
     throw error;
   }
 };
+
