@@ -16,6 +16,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     }
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="flex justify-center items-center mt-6">
       <Input
@@ -25,6 +31,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         size="lg"
         value={query}
         onValueChange={setQuery}
+        onKeyDown={handleKeyDown}
         className="max-w-xs md:max-w-md mr-4"
       />
       <Button

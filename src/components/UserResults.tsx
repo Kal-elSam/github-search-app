@@ -33,7 +33,6 @@ const UserResults: React.FC<UserResultsProps> = ({ users }) => {
         <Card
           key={user.login}
           className="shadow-lg border border-gray-700 rounded-xl bg-gray-800 hover:bg-gray-700 transform transition-transform duration-300 hover:scale-105"
-          isHoverable
           isPressable
         >
           {/* Encabezado de Mini Browser */}

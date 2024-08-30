@@ -29,7 +29,6 @@ const RepoResults: React.FC<RepoResultsProps> = ({ repositories }) => {
         <Card
           key={repo.id}
           className="w-full shadow-lg border border-gray-700 rounded-xl bg-gray-800 hover:bg-gray-700 transform transition-transform duration-300 hover:scale-105"
-          isHoverable
           isPressable
         >
           {/* Encabezado tipo "browser" */}
