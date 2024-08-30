@@ -1,32 +1,41 @@
-'use client'
+'use client';
 
-import React, { useState } from 'react'
-import { Input,Button, Spacer } from '@nextui-org/react'
+import React, { useState } from 'react';
+import { Input, Button } from '@nextui-org/react';
 
 interface SearchBarProps {
-  onSearch: (query: string) => void
+  onSearch: (query: string) => void;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState('');
 
   const handleSearch = () => {
-    if (query.trim() != '') {
-      onSearch(query)
+    if (query.trim() !== '') {
+      onSearch(query);
     }
-  }
+  };
 
   return (
-    <div className='felx justify-center items-center mt-6'>
+    <div className="flex justify-center items-center mt-6">
       <Input
-        placeholder="Search for a repository"
+        isClearable
+        variant="bordered"
+        placeholder="Buscar en GitHub"
+        size="lg"
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onValueChange={setQuery}
+        className="max-w-xs md:max-w-md mr-4"
       />
-      <Spacer x={0.5} />
-      <Button onClick={handleSearch}>Search</Button>
+      <Button
+        onPress={handleSearch}
+        variant="flat"
+        className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 shadow-lg transform transition-transform duration-300 hover:scale-105"
+      >
+        Buscar
+      </Button>
     </div>
-  )
-}
+  );
+};
 
-export default SearchBar
+export default SearchBar;
